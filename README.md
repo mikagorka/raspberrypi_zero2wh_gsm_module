@@ -89,6 +89,7 @@ Here are some essential AT commands for sending SMS messages and making phone ca
 |----------------------------------|------------------------------------------------------|
 | `AT+CMGF=1`                      | Set SMS mode to text (not PDU)                      |
 | `AT+CMGS="+49XXXXXXXXXX"`        | Send an SMS to the number `+49XXXXXXXXXX`          |
+| `AT+CPIN?`                       | Check if PIN is unlocked                            |
 | `AT+CPMS?`                       | Check SMS storage status                            |
 | `AT+CMGL="ALL"`                  | Read all received SMS messages                     |
 | `AT+CMGD=1`                      | Delete the SMS with index 1                        |
