@@ -2,7 +2,7 @@ import serial
 import time
 
 # Konfiguriere die serielle Verbindung
-ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)  # Passe den Port an
+ser = serial.Serial('/dev/serial0', 9600, timeout=1)  # Passe den Port an
 
 def read_sms():
     time.sleep(1)
