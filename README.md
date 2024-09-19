@@ -44,7 +44,17 @@ In this repository, I want to share all my scripts and instructions I've been us
    ```bash
    sudo reboot
    ```
-3. **Install `minicom`** for serial communication by running the following commands:
+3. **power on GSM Module**
+   *please refer to waveshare instructions*
+   > * Manually power on SIM module: Press the PWRKEY button for about 3s
+   > 
+   > or 
+   > 
+   > * Software power on SIM module: Writing script to pull-down P4 (BCM2835 number) for about 3s.
+   
+   for software power on ypu can use the python script provided `GSM_PWRKEY.py`
+
+4. **Install `minicom`** for serial communication by running the following commands:
 
    ```bash
    sudo apt update
@@ -54,9 +64,9 @@ In this repository, I want to share all my scripts and instructions I've been us
    ```bash
    sudo minicom -D /dev/serial0 -b 115200
    ```
-5. Your screen should now be ready. If you cannot type anything in the `minicom` terminal, refer to the [Troubleshooting](#troubleshooting) section below.
+6. Your screen should now be ready. If you cannot type anything in the `minicom` terminal, refer to the [Troubleshooting](#troubleshooting) section below.
 
-6. **Test the connection** by typing the following command:
+7. **Test the connection** by typing the following command:
    ```bash
    AT
    ```
