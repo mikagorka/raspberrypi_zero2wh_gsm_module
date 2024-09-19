@@ -1,6 +1,7 @@
 # Raspberry Pi Zero 2W(H) GSM Module
 
 In this repository, I want to share all my scripts and instructions I've been using to connect a SIM card to my Raspberry Pi (affectionately called "Strawberry" 🍓).
+> FILES FOLLOWING SOON...😶‍🌫️
 
 ## Table of Contents
 
