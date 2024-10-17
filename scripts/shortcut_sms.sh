@@ -59,4 +59,4 @@ else
     exit 1
 fi
 
-echo "python3 send_sms.py \"$number\" \"$message\"" | at "$time"
+echo "python3 send_sms.py \"$number\" \"$message\"" | "$time"
