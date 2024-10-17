@@ -51,6 +51,8 @@ if [[ -z "$number" || -z "$message" || -z "$time" ]]; then
     usage
 fi
 
+number_plus="+49$number"
+
 # Check time format without using regex
 if [[ "$time" == *" at "* ]] && [[ "$time" == *"."* ]]; then
     time=$(convert_time_format "$time")
@@ -60,7 +62,7 @@ else
 fi
 
 # Der Befehl, der an 'at' übergeben wird
-command="python3 github/raspberrypi_zero2wh_gsm_module/scripts/module_scripts/send_sms.py \"$number\" \"$message\""
+command="python3 github/raspberrypi_zero2wh_gsm_module/scripts/module_scripts/send_sms.py \"$number_plus\" \"$message\""
 
 # Den Befehl über 'at' ausführen
 echo "$command" | at "$time"
