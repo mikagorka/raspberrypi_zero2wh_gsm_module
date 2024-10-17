@@ -15,7 +15,7 @@ usage() {
 convert_time_format() {
     local input_time="$1"
     # Remove the dot after the day and rearrange
-    formatted_time=$(echo "$input_time" | sed -E 's/^([0-9]{1,2})\. ([A-Za-z]{3}) ([0-9]{4}) at ([0-9]+:[0-9]+)$/at \4 \1 \2 \3/')
+    formatted_time=$(echo "$input_time" | sed -E 's/^([0-9]{1,2})\. ([A-Za-z]{3}) ([0-9]{4}) at ([0-9]+:[0-9]+)$/\4 \1 \2 \3/')
     echo "$formatted_time"
 }
 
@@ -34,7 +34,7 @@ while [[ "$#" -gt 0 ]]; do
             time="$2"
             shift 2
             ;;
-        --user)     # Option for time
+        --user)     # Option for user
             user="$2"
             shift 2
             ;;
@@ -59,4 +59,8 @@ else
     exit 1
 fi
 
-echo "python3 send_sms.py \"$number\" \"$message\"" \| "$time"
+# Der Befehl, der an 'at' übergeben wird
+command="python3 send_sms.py \"$number\" \"$message\""
+
+# Den Befehl über 'at' ausführen
+echo "$command" | at "$time"
