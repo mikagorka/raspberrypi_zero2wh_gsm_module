@@ -60,7 +60,7 @@ else
 fi
 
 # Der Befehl, der an 'at' übergeben wird
-command="python3 send_sms.py \"$number\" \"$message\""
+command="python3 github/raspberrypi_zero2wh_gsm_module/scripts/module_scripts/send_sms.py \"$number\" \"$message\""
 
 # Den Befehl über 'at' ausführen
 echo "$command" | at "$time"
